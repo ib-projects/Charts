@@ -124,9 +124,9 @@ open class ShadowPieChartView: PieRadarChartViewBase
 
         //legendRenderer.renderLegend(context: context)
 
-        drawDescription(context: context)
+        //drawDescription(context: context)
 
-        drawMarkers(context: context)
+        //drawMarkers(context: context)
     }
 
     /// if width is larger than height
@@ -163,13 +163,13 @@ open class ShadowPieChartView: PieRadarChartViewBase
 
         let c = adjustedCenterOffsets()
 
-        let shift = (data as? PieChartData)?.dataSet?.selectionShift ?? 0.0
+        let shift: CGFloat = 16
 
         // create the circle box that will contain the pie-chart (the bounds of the pie-chart)
-        _circleBox.origin.x = (c.x - radius) + shift
-        _circleBox.origin.y = (c.y - radius) + shift
-        _circleBox.size.width = radius * 2 - shift * 2.0
-        _circleBox.size.height = radius * 2 - shift * 2.0
+        _circleBox.origin.x = (c.x - radius) + shift/2
+        _circleBox.origin.y = (c.y - radius) + shift/2
+        _circleBox.size.width = radius * 2 - shift
+        _circleBox.size.height = radius * 2 - shift
 
     }
 
