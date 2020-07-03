@@ -168,8 +168,8 @@ open class ShadowPieChartView: PieRadarChartViewBase
         // create the circle box that will contain the pie-chart (the bounds of the pie-chart)
         _circleBox.origin.x = (c.x - radius) + shift/2
         _circleBox.origin.y = (c.y - radius) + shift/2
-        _circleBox.size.width = radius * 2 - shift
-        _circleBox.size.height = radius * 2 - shift
+        _circleBox.size.width = radius * 2 - shift - 4
+        _circleBox.size.height = radius * 2 - shift - 4
 
     }
 
