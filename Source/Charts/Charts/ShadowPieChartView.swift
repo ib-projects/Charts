@@ -524,6 +524,7 @@ open class ShadowPieChartView: PieRadarChartViewBase
     open var shadowColor: UIColor?
     open var shadowOffset: CGSize?
     open var shadowBlur: CGFloat?
+    open var strokeWidth: CGFloat?
 
     /// The circlebox, the boundingbox of the pie-chart slices
     @objc open var circleBox: CGRect

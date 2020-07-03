@@ -302,7 +302,7 @@ open class ShadowPieChartRenderer: DataRenderer
             context.fillPath(using: .evenOdd)
 
             context.setStrokeColor(UIColor.white.cgColor)
-            context.setLineWidth(10)
+            context.setLineWidth(chart.strokeWidth ?? 8)
             context.beginPath()
             context.addPath(path)
             context.strokePath()
