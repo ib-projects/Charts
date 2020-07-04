@@ -523,21 +523,30 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
         
         if h == nil
         {
-            self.lastHighlighted = nil
-            _indicesToHighlight.removeAll(keepingCapacity: false)
+            if self.isHighLightPerTapEnabled {
+                self.lastHighlighted = nil
+                _indicesToHighlight.removeAll(keepingCapacity: false)
+                // redraw the chart
+                setNeedsDisplay()
+            }
         }
         else
         {
-            // set the indices to highlight
             entry = _data?.entryForHighlight(h!)
-            if entry == nil
-            {
-                h = nil
-                _indicesToHighlight.removeAll(keepingCapacity: false)
-            }
-            else
-            {
-                _indicesToHighlight = [h!]
+
+            if self.isHighLightPerTapEnabled {
+                // set the indices to highlight
+                if entry == nil
+                {
+                    h = nil
+                    _indicesToHighlight.removeAll(keepingCapacity: false)
+                }
+                else
+                {
+                    _indicesToHighlight = [h!]
+                }
+                // redraw the chart
+                setNeedsDisplay()
             }
         }
         
@@ -553,9 +562,6 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
                 delegate.chartValueNothingSelected?(self)
             }
         }
-        
-        // redraw the chart
-        setNeedsDisplay()
     }
     
     /// - Returns: The Highlight object (contains x-index and DataSet index) of the

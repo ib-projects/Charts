@@ -44,8 +44,11 @@ class AnotherBarChartViewController: DemoBaseViewController {
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-                
+        xAxis.gridColor = .red
+
+        chartView.rightAxis.gridColor = .green
         chartView.legend.enabled = false
+
         
         sliderX.value = 10
         sliderY.value = 100

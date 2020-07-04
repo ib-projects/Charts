@@ -39,11 +39,11 @@ class PieChartViewController: DemoBaseViewController {
                         .saveToGallery,
                         .toggleData]
 
-        self.setup(pieChartView: chartView)
+//        self.setup(pieChartView: chartView)
 
         chartView.delegate = self
         chartView.transparentCircleColor = .clear
-        chartView.drawSlicesUnderHoleEnabled = false
+        chartView.drawSlicesUnderHoleEnabled = false        
 
 
         // entry label styling
@@ -51,7 +51,7 @@ class PieChartViewController: DemoBaseViewController {
         chartView.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
 
         chartView.drawSlicesUnderHoleEnabled = false
-        chartView.highlightPerTapEnabled = true
+        chartView.highlightPerTapEnabled = false
 
         chartView.shadowColor = UIColor.gray
         chartView.shadowOffset = CGSize(width: 3, height: 4)
